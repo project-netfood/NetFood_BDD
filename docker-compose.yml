@@ -9,7 +9,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=pass
 
-  netfood_bdd:
+  bdd:
     image: mongo:latest
     links:
       - mongodb
@@ -17,3 +17,11 @@ services:
       - .:/netfood_bdd
     command:
       /netfood_bdd/import.sh
+  back:
+    build: ./../Netfood_Back-End/
+    ports:
+      - 5000:5000
+  front:
+    build: ./../Netfood_Front-End/
+    ports:
+      - 3000:3000
