@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "632c70a9266439320f2b786e"
+  },
+  "nom__plat": "Chicken Curry",
+  "theme_plat": "Indien",
+  "ingredient_plat": "riz,curry,poulet,sauce Curry",
+  "illustration_plat": "C:UsersKevin Simage3.jpg"
+},{
+  "_id": {
+    "$oid": "632c7107266439320f2b786f"
+  },
+  "nom__plat": "Pizza 3 fromages",
+  "theme_plat": "Italien",
+  "ingredient_plat": "pate,tomate,mozzarella,emmental,chevre",
+  "illustration_plat": "C:UsersKevin Simage.jpg"
+},{
+  "_id": {
+    "$oid": "632c71a0266439320f2b7870"
+  },
+  "nom__plat": "Maffé",
+  "theme_plat": "Africain",
+  "ingredient_plat": "riz cassé, sauce d'arrachide, agneau",
+  "illustration_plat": "C:UsersKevin Simage1.jpg"
+},{
+  "_id": {
+    "$oid": "632d634c5b1128b03b893763"
+  },
+  "nom__plat": "Chicken Butter",
+  "theme_plat": "Indien",
+  "ingredient_plat": "riz,curry,poulet,sauce Butter",
+  "illustration_plat": "C:UsersKevin Simage3.jpg"
+},{
+  "_id": {
+    "$oid": "632d63615b1128b03b893764"
+  },
+  "nom__plat": "Chicken Massala",
+  "theme_plat": "Indien",
+  "ingredient_plat": "riz,curry,poulet,sauce massala",
+  "illustration_plat": "C:UsersKevin Simage2.jpg"
+},{
+  "_id": {
+    "$oid": "632d63845b1128b03b893765"
+  },
+  "nom__plat": "Pates corbanara",
+  "theme_plat": "Italien",
+  "ingredient_plat": "pate,creme,mozzarella,emmental,lardons",
+  "illustration_plat": "C:UsersKevin Simage2.jpg"
+},{
+  "_id": {
+    "$oid": "632d63905b1128b03b893766"
+  },
+  "nom__plat": "Lasagnes",
+  "theme_plat": "Italien",
+  "ingredient_plat": "pate,creme,mozzarella,tomate,viande hacher",
+  "illustration_plat": "C:UsersKevin Simage1.jpg"
+},{
+  "_id": {
+    "$oid": "632d63b25b1128b03b893767"
+  },
+  "nom__plat": "Atitéké au poisson",
+  "theme_plat": "Africain",
+  "ingredient_plat": "tomate, semoule d'attiéké, capitaine",
+  "illustration_plat": "C:UsersKevin Simage3.jpg"
+},{
+  "_id": {
+    "$oid": "632d63ec5b1128b03b893768"
+  },
+  "nom__plat": "foufou  de banane",
+  "theme_plat": "Africain",
+  "ingredient_plat": "crabe, gombo, piment, banane plantin",
+  "illustration_plat": "C:UsersKevin Simage2.jpg"
+}]

@@ -1,0 +1,2 @@
+error parsing command line options: unknown option "Host"
+try 'mongoimport --help' for more information

@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=netfood
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+
+  netfood_bdd:
+    image: mongo:latest
+    links:
+      - mongodb
+    volumes:
+      - .:/netfood_bdd
+    command:
+      /netfood_bdd/import.sh
