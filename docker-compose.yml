@@ -9,19 +9,18 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=pass
 
-  bdd:
+  mongo-provision:
     image: mongo:latest
-    links:
-      - mongodb
+    command: mongoimport -u root -p pass --host mongodb --db netfood --collection plats --type json --file /plats.json --jsonArray --authenticationDatabase admin
     volumes:
-      - .:/netfood_bdd
-    command:
-      /netfood_bdd/import.sh
+      - ./Netfood_BDD/plats.json:/plats.json
+    depends_on:
+      - mongodb
   back:
-    build: ./../Netfood_Back-End/
+    build: ./NetFood_Back-End/
     ports:
       - 5000:5000
   front:
-    build: ./../Netfood_Front-End/
+    build: ./NetFood_Front-End/
     ports:
       - 3000:3000

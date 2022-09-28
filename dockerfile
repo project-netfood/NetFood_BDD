@@ -1,4 +1,4 @@
-FROM mongobd:lastest
+FROM mongo
 WORKDIR /
 COPY . .
 EXPOSE 3000
