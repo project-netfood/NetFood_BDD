@@ -5,15 +5,15 @@
   "nom__plat": "Chicken Curry",
   "theme_plat": "Indien",
   "ingredient_plat": "riz,curry,poulet,sauce Curry",
-  "illustration_plat": "C:UsersKevin Simage3.jpg"
+  "illustration_plat": "https://cache.marieclaire.fr/data/photo/w750_c17/cuisine/3y/pouletcurry.jpg"
 },{
   "_id": {
     "$oid": "632c7107266439320f2b786f"
   },
-  "nom__plat": "Pizza 3 fromages",
+  "nom__plat": "Pizza Margharrita",
   "theme_plat": "Italien",
   "ingredient_plat": "pate,tomate,mozzarella,emmental,chevre",
-  "illustration_plat": "C:UsersKevin Simage.jpg"
+  "illustration_plat": "https://la500-nantes.com/wp-content/uploads/2022/05/margherita.png"
 },{
   "_id": {
     "$oid": "632c71a0266439320f2b7870"
@@ -21,7 +21,7 @@
   "nom__plat": "Maffé",
   "theme_plat": "Africain",
   "ingredient_plat": "riz cassé, sauce d'arrachide, agneau",
-  "illustration_plat": "C:UsersKevin Simage1.jpg"
+  "illustration_plat": "https://aistoucuisine.com/wp-content/uploads/2016/07/maffe%CC%81.jpg"
 },{
   "_id": {
     "$oid": "632d634c5b1128b03b893763"
@@ -29,7 +29,7 @@
   "nom__plat": "Chicken Butter",
   "theme_plat": "Indien",
   "ingredient_plat": "riz,curry,poulet,sauce Butter",
-  "illustration_plat": "C:UsersKevin Simage3.jpg"
+  "illustration_plat": "https://cravinghomecooked.com/wp-content/uploads/2020/06/butter-chicken-1-750x938.jpg"
 },{
   "_id": {
     "$oid": "632d63615b1128b03b893764"
@@ -37,7 +37,7 @@
   "nom__plat": "Chicken Massala",
   "theme_plat": "Indien",
   "ingredient_plat": "riz,curry,poulet,sauce massala",
-  "illustration_plat": "C:UsersKevin Simage2.jpg"
+  "illustration_plat": "https://www.cookomix.com/wp-content/uploads/2016/07/poulet-tikka-masala-thermomix-800x600.jpg"
 },{
   "_id": {
     "$oid": "632d63845b1128b03b893765"
@@ -45,7 +45,7 @@
   "nom__plat": "Pates corbanara",
   "theme_plat": "Italien",
   "ingredient_plat": "pate,creme,mozzarella,emmental,lardons",
-  "illustration_plat": "C:UsersKevin Simage2.jpg"
+  "illustration_plat": "https://www.cookomix.com/wp-content/uploads/2017/05/pates-carbonara-thermomix-800x600.jpg"
 },{
   "_id": {
     "$oid": "632d63905b1128b03b893766"
@@ -53,7 +53,7 @@
   "nom__plat": "Lasagnes",
   "theme_plat": "Italien",
   "ingredient_plat": "pate,creme,mozzarella,tomate,viande hacher",
-  "illustration_plat": "C:UsersKevin Simage1.jpg"
+  "illustration_plat": "https://www.cookomix.com/wp-content/uploads/2017/06/lasagnes-epinards-chevre-thermomix-800x600.jpg"
 },{
   "_id": {
     "$oid": "632d63b25b1128b03b893767"
@@ -61,7 +61,7 @@
   "nom__plat": "Atitéké au poisson",
   "theme_plat": "Africain",
   "ingredient_plat": "tomate, semoule d'attiéké, capitaine",
-  "illustration_plat": "C:UsersKevin Simage3.jpg"
+  "illustration_plat": "https://4.bp.blogspot.com/-g4wJAmZVYxc/XIlVsXaJ8qI/AAAAAAAAGz0/u2_CtCLSLtUrKvM8uzRGjZdiP1pKthJaACLcBGAs/s400/P3130401%2Bbien_GF.jpg"
 },{
   "_id": {
     "$oid": "632d63ec5b1128b03b893768"
@@ -69,5 +69,5 @@
   "nom__plat": "foufou  de banane",
   "theme_plat": "Africain",
   "ingredient_plat": "crabe, gombo, piment, banane plantin",
-  "illustration_plat": "C:UsersKevin Simage2.jpg"
+  "illustration_plat": "https://marinadely.files.wordpress.com/2017/04/foufou-banane-accompagnc3a9-de-sauce-claire-poisson-cc3b4telettes-de-boeuf-fumc3a9-ivorianfood.jpg"
 }]

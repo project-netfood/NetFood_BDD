@@ -10,17 +10,20 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=pass
 
   mongo-provision:
-    image: mongo:latest
+    # image: mongo:latest
+    # volumes:
+    #   - ./Netfood_BDD/plats.json:/plats.json
+
+    image:  ksoul59/netfood_bdd:2
     command: mongoimport -u root -p pass --host mongodb --db netfood --collection plats --type json --file /plats.json --jsonArray --authenticationDatabase admin
-    volumes:
-      - ./Netfood_BDD/plats.json:/plats.json
+
     depends_on:
       - mongodb
   back:
-    build: ./NetFood_Back-End/
+    image: ksoul59/netfood_back:1.0
     ports:
       - 5000:5000
   front:
-    build: ./NetFood_Front-End/
+    image: ksoul59/netfood_front:1.0
     ports:
       - 3000:3000
