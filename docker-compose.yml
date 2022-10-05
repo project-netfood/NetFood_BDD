@@ -26,4 +26,4 @@ services:
   front:
     image: ksoul59/netfood_front:1.0
     ports:
-      - 3000:3000
+      - 1201:3000
