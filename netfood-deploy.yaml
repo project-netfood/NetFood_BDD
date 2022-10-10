@@ -1,0 +1,209 @@
+###################################################
+#                 Namespace Netfood               #
+###################################################
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: Netfood-Project
+
+---
+
+###################################################
+#            Deployment Node React                #
+###################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Node
+  namespace: node-repo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+      - name: node
+        image: Ksoul59/netfood_front
+        ports:
+        - containerPort: 3000
+
+---
+
+####################################################
+#        Service Node React                        #
+####################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-service
+  namespace: node-repo
+  labels:
+    app: node
+spec:
+  ports:
+  - name: node
+    port: 3000
+    targetPort: 3000
+    protocol: TCP
+  selector:
+    app: node
+
+---
+
+###################################################
+#                 Ingress Node React              #
+###################################################
+
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  namespace: node-repo
+  name: git-tls
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  rules:
+  - host: front.netfood.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: node-service
+            port:
+              number: 3000
+
+---
+
+###################################################
+#            Deployment Python                    #
+###################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Python
+  namespace: python-repo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+      - name: python
+        image: Ksoul59/netfood_back
+        ports:
+        - containerPort: 5000
+
+---
+
+####################################################
+#        Service Python                            #
+####################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-service
+  namespace: python-repo
+  labels:
+    app: node
+spec:
+  ports:
+  - name: node
+    port: 5000
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    app: python
+
+---
+
+###################################################
+#                 Ingress Python                  #
+###################################################
+
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  namespace: python-repo
+  name: git-tls
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  rules:
+  - host: back.netfood.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: python-service
+            port:
+              number: 5000
+
+---
+###################################################
+#     Deployment MongoDB                          #
+###################################################
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: mongobd-repo
+  name: mongobd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongobd
+    spec:
+      containers:
+      - name: mongobd
+        image: ksoul59/netfood_bdd
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGODB_PASSWORD
+          value: pass
+
+
+---
+
+####################################################
+#                 Service MongoDB                  #
+####################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: Netfood-Project
+  name: mongodb-service
+  labels:
+    app: mongobd
+spec:
+  ports:
+  - name: mongobd
+    port: 5200
+    targetPort: 5200
+  selector:
+    app: mongobd
