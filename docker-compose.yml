@@ -1,14 +1,62 @@
+# version: '3.7'
+# services:
+#   mongodb:
+#     image: mongo:latest
+#     ports:
+#       - 27017:27017
+#     environment:
+#       - MONGO_INITDB_DATABASE=netfood
+#       - MONGO_INITDB_ROOT_USERNAME=root
+#       - MONGO_INITDB_ROOT_PASSWORD=pass
+
+#   mongo-provision:
+#     # image: mongo:latest
+#     # volumes:
+#     #   - ./Netfood_BDD/plats.json:/plats.json
+
+#     image:  ksoul59/netfood_bdd:2
+#     command: mongoimport -u root -p pass --host mongodb --db netfood --collection plats --type json --file /plats.json --jsonArray --authenticationDatabase admin
+
+#     depends_on:
+#       - mongodb
+#   back:
+#     image: ksoul59/netfood_back:1.0
+#     ports:
+#       - 5000:5000
+#   front:
+#     image: ksoul59/netfood_front:1.0
+#     ports:
+#       - 3000:3000
+
 version: '3.7'
 services:
   mongodb:
+    restart: 'always'
     image: mongo:latest
+    container_name: netfood-mongo-container
     ports:
       - 27017:27017
+   
+    
     environment:
       - MONGO_INITDB_DATABASE=netfood
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=pass
 
+
+  mongo_exporter:
+    restart: 'always'
+    ports:
+    - '9216:9216'
+    - '17001:17001'
+    image: percona/mongodb_exporter:0.20
+    
+    environment:
+     - MONGODB_URI=mongodb://root:pass@mongodb:27017
+    depends_on:
+    - mongodb
+   
+    
   mongo-provision:
     # image: mongo:latest
     # volumes:
@@ -26,4 +74,42 @@ services:
   front:
     image: ksoul59/netfood_front:1.0
     ports:
-      - 1201:3000
+      - 3000:3000
+
+
+  grafana:
+    restart: 'always'
+    ports:
+    - '4000:3000'
+    image: grafana/grafana:latest
+    container_name: grafana-container
+
+   
+     
+    
+    
+    # expose:
+    #   - 3000
+
+  prometheus:
+    restart: 'always'
+    ports:
+    - '9090:9090'
+    image: prom/prometheus
+    container_name: prometheus-container
+
+    volumes:
+    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    - ./prometheus/data:/data
+
+      
+
+    
+    depends_on:
+    - mongo_exporter
+    networks:
+      infranet:
+        aliases:
+        - 'prometheus-service'
+networks:
+  infranet:
